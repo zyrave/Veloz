@@ -11,7 +11,7 @@ using Veloz.Persistence;
 namespace Veloz.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20170922034912_Initial")]
+    [Migration("20170922040949_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -35,7 +35,7 @@ namespace Veloz.Migrations
                     b.Property<DateTime>("CreateDate");
 
                     b.Property<string>("Email")
-                        .HasMaxLength(255);
+                        .HasMaxLength(50);
 
                     b.Property<bool>("IsActive");
 
@@ -50,7 +50,8 @@ namespace Veloz.Migrations
                     b.Property<string>("Phone")
                         .HasMaxLength(50);
 
-                    b.Property<string>("SocialId");
+                    b.Property<string>("SocialId")
+                        .HasMaxLength(50);
 
                     b.HasKey("Id");
 

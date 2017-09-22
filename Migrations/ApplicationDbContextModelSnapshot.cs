@@ -34,7 +34,7 @@ namespace Veloz.Migrations
                     b.Property<DateTime>("CreateDate");
 
                     b.Property<string>("Email")
-                        .HasMaxLength(255);
+                        .HasMaxLength(50);
 
                     b.Property<bool>("IsActive");
 
@@ -49,7 +49,8 @@ namespace Veloz.Migrations
                     b.Property<string>("Phone")
                         .HasMaxLength(50);
 
-                    b.Property<string>("SocialId");
+                    b.Property<string>("SocialId")
+                        .HasMaxLength(50);
 
                     b.HasKey("Id");
 

@@ -15,7 +15,7 @@ namespace Veloz.Core.Models
         public string City { get; set; }
         [StringLength(50)]
         public string Phone { get; set; }
-        [StringLength(255)]
+        [StringLength(50)]
         public string Email { get; set; }
         [StringLength(50)]
         public string SocialId { get; set; }
