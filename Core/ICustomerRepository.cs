@@ -5,8 +5,9 @@ namespace Veloz.Core
 {
     public interface ICustomerRepository
     {
+        Task<QueryResult<Customer>> GetCustomers(CustomerQuery filter);
+        Task<Customer> GetCustomer(int id);
         void Add(Customer customer);
         void Remove(Customer customer);
-        Task<Customer> GetCustomer(int id);
     }
 }

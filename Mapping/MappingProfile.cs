@@ -9,10 +9,13 @@ namespace Veloz.Mapping
         public MappingProfile()
         {
             // Domain to API Resource
+            CreateMap(typeof(QueryResult<>), typeof(QueryResultResource<>));
             CreateMap<Customer, CustomerResource>();
 
             // API Resource to Domain
-            CreateMap<SaveCustomerResource, Customer>();
+            CreateMap<CustomerQueryResource, CustomerQuery>();
+            CreateMap<SaveCustomerResource, Customer>()
+                .ForMember(c => c.Id, opt => opt.Ignore());
         }
     }
 }
