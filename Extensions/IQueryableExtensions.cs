@@ -11,7 +11,7 @@ namespace Veloz.Extensions
         public static IQueryable<Customer> ApplyFiltering(this IQueryable<Customer> query, CustomerQuery queryObj)
         {
             if (!String.IsNullOrWhiteSpace(queryObj.Name))
-                query = query.Where(c => c.Name == queryObj.Name);
+                query = query.Where(c => c.Name.Contains(queryObj.Name));
 
             return query;
         }

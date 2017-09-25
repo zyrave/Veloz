@@ -4,13 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
-import { CustomerListComponent } from './components/customer-list/customer-list.component';
+import { CustomerService } from './services/customer.service';
 
 import { AppComponent } from './components/app/app.component';
 import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { HomeComponent } from './components/home/home.component';
 import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { CounterComponent } from './components/counter/counter.component';
+import { CustomerListComponent } from './components/customer-list/customer-list.component';
 
 @NgModule({
     declarations: [
@@ -31,6 +32,10 @@ import { CounterComponent } from './components/counter/counter.component';
             { path: 'customers', component: CustomerListComponent },
             { path: '**', redirectTo: 'home' }
         ])
+    ],
+    providers: [
+        { provide: 'ORIGIN_URL', useValue: location.origin },
+        CustomerService
     ]
 })
 export class AppModuleShared {

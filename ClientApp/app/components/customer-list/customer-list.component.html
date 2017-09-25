@@ -1,3 +1,43 @@
+<h2>Customers</h2>
 <p>
-  customer-list works!
+  <a [routerLink]="" class="btn btn-primary">New Customer</a>
 </p>
+<div class="well">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input name="name" id="name" class="form-control" [ngModel]="query.name" (ngModelChange)="onFilterChange($event)" />
+  </div>
+  <button class="btn btn-default" (click)="resetFilter()">Reset</button>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th *ngFor="let c of columns">
+        <div *ngIf="c.isSortable" (click)="sortBy(c.key)">
+          {{ c.title }}
+        </div>
+        <div *ngIf="!c.isSortable">
+          {{ c.title }}
+        </div>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let i of queryResult.items">
+      <td>{{ i.id }}</td>
+      <td>{{ i.name }}</td>
+      <td>{{ i.address }}</td>
+      <td>{{ i.city }}</td>
+      <td>{{ i.phone }}</td>
+      <td>{{ i.email }}</td>
+      <td>{{ i.socialId }}</td>
+      <td>{{ i.isCorporate }}</td>
+      <td>{{ i.isActive }}</td>
+      <td>{{ i.createDate }}</td>
+      <td>{{ i.lastUpdate }}</td>
+      <td>
+        <a [routerLink]="">view</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
