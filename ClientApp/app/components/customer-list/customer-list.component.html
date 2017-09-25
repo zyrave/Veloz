@@ -37,8 +37,9 @@
       <td>{{ i.createDate }}</td>
       <td>{{ i.lastUpdate }}</td>
       <td>
-        <a [routerLink]="">view</a>
+        <a [routerLink]="">View</a>
       </td>
     </tr>
   </tbody>
 </table>
+<pagination [total-items]="queryResult.totalItems" [page-size]="query.pageSize" (page-changed)="onPageChange($event)"></pagination>
