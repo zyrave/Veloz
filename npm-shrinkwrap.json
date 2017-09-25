@@ -2357,6 +2357,11 @@
       "from": "flatten@https://registry.npmjs.org/flatten/-/flatten-1.0.2.tgz",
       "resolved": "https://registry.npmjs.org/flatten/-/flatten-1.0.2.tgz"
     },
+    "font-awesome": {
+      "version": "4.7.0",
+      "from": "font-awesome@latest",
+      "resolved": "https://registry.npmjs.org/font-awesome/-/font-awesome-4.7.0.tgz"
+    },
     "for-in": {
       "version": "1.0.2",
       "from": "for-in@https://registry.npmjs.org/for-in/-/for-in-1.0.2.tgz",
