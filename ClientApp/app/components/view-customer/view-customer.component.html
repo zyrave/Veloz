@@ -1,0 +1,17 @@
+<h2>Customer</h2>
+<ul>
+  <li>Id: {{ customer.id }}</li>
+  <li>Name: {{ customer.name }}</li>
+  <li>Address: {{ customer.address }}</li>
+  <li>City: {{ customer.city }}</li>
+  <li>Phone: {{ customer.phone }}</li>
+  <li>Email: {{ customer.email }}</li>
+  <li>Social Id: {{ customer.socialdI }}</li>
+  <li>Corporate: {{ customer.isCorporate ? 'Yes' : 'No' }}</li>
+</ul>
+<br />
+<p>
+  <a class="btn btn-primary" [routerLink]="['/customers/edit/', customer.id]">Edit</a>
+  <button class="btn btn-danger" (click)="delete()">Delete</button>
+  <a class="btn btn-default" [routerLink]="['/customers']">View All customers</a>
+</p>

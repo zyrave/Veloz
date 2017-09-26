@@ -13,6 +13,7 @@ import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { CounterComponent } from './components/counter/counter.component';
 import { CustomerFormComponent } from './components/customer-form/customer-form.component';
 import { CustomerListComponent } from './components/customer-list/customer-list.component';
+import { ViewCustomerComponent } from './components/view-customer/view-customer.component';
 import { PaginationComponent } from './components/shared/pagination.component';
 
 @NgModule({
@@ -24,6 +25,7 @@ import { PaginationComponent } from './components/shared/pagination.component';
         HomeComponent,
         CustomerFormComponent,
         CustomerListComponent,
+        ViewCustomerComponent,
         PaginationComponent
     ],
     imports: [
@@ -35,6 +37,7 @@ import { PaginationComponent } from './components/shared/pagination.component';
             { path: 'home', component: HomeComponent },
             { path: 'customers', component: CustomerListComponent },
             { path: 'customers/new', component: CustomerFormComponent },
+            { path: 'customers/:id', component: ViewCustomerComponent },
             { path: '**', redirectTo: 'home' }
         ])
     ],
