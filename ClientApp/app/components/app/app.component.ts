@@ -6,4 +6,10 @@ import { Component } from '@angular/core';
     styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+    isToggled: boolean = false;
+
+    onToggle() {
+        console.log(this.isToggled);
+        this.isToggled = !this.isToggled;
+    }
 }

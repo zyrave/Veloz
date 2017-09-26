@@ -1,10 +1,18 @@
-<div class='container-fluid'>
-    <div class='row'>
-        <div class='col-sm-3'>
-            <nav-menu></nav-menu>
-        </div>
-        <div class='col-sm-9 body-content'>
-            <router-outlet></router-outlet>
-        </div>
+<div id="wrapper" [class.toggled]="!isToggled">
+  <div id="sidebar-wrapper">
+    <nav-menu></nav-menu>
+  </div>
+  <!-- /#sidebar-wrapper -->
+  <div id="page-content-wrapper">
+    <div class="container-fluid">
+      <div>
+        <button class="btn btn-toggled" aria-label="" (click)="onToggle()">
+          <i class=" fa fa-align-justify "></i>
+        </button>
+      </div>
+      <router-outlet></router-outlet>
     </div>
+  </div>
+  <!-- /#page-content-wrapper -->
 </div>
+<!-- /#wrapper -->
