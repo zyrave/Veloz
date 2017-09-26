@@ -9,7 +9,6 @@ export class AppComponent {
     isToggled: boolean = false;
 
     onToggle() {
-        console.log(this.isToggled);
         this.isToggled = !this.isToggled;
     }
 }

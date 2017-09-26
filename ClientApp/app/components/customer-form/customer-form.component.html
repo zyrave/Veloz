@@ -1,0 +1,43 @@
+<h2>New Customer</h2>
+<form #f="ngForm" (ngSubmit)="submit()" novalidate>
+  <div class="formgroup">
+    <label for="name">Name</label>
+    <input name="name" id="name" type="text" class="form-control" [(ngModel)]="customer.name" required #name="ngModel">
+    <div class="alert alert-danger" *ngIf="name.touched && !name.valid">Please specify the name.</div>
+  </div>
+  <div class="formgroup">
+    <label for="address">Address</label>
+    <input name="address" id="name" type="text" class="form-control" [(ngModel)]="customer.address" #address="ngModel">
+    <div class="alert alert-danger" *ngIf="address.touched && !address.valid">Please specify the address.</div>
+  </div>
+  <div class="formgroup">
+    <label for="city">City</label>
+    <input name="city" id="city" type="text" class="form-control" [(ngModel)]="customer.city" #city="ngModel">
+    <div class="alert alert-danger" *ngIf="city.touched && !city.valid">Please specify the city.</div>
+  </div>
+  <div class="formgroup">
+    <label for="phone">Phone</label>
+    <input name="phone" id="phone" type="text" class="form-control" [(ngModel)]="customer.phone" #phone="ngModel">
+    <div class="alert alert-danger" *ngIf="phone.touched && !phone.valid">Please specify the phone.</div>
+  </div>
+  <div class="formgroup">
+    <label for="email">Email</label>
+    <input name="email" id="email" type="text" class="form-control" [(ngModel)]="customer.email" #email="ngModel">
+    <div class="alert alert-danger" *ngIf="email.touched && !email.valid">Please specify the email.</div>
+  </div>
+  <div class="formgroup">
+    <label for="socialId">Social Id</label>
+    <input name="socialId" id="socialId" type="text" class="form-control" [(ngModel)]="customer.socialId" #socialId="ngModel">
+    <div class="alert alert-danger" *ngIf="socialId.touched && !socialId.valid">Please specify the name.</div>
+  </div>
+  <div class="formgroup">
+    <p>Is this customer Corporate?</p>
+    <label for="corporate" class="radio-inline">
+      <input name="isCorporate" id="corporate" type="radio" [(ngModel)]="customer.isCorporate" [value]="true">Yes
+    </label>
+    <label for="notCorporate" class="radio-inline">
+      <input name="isCorporate" id="notCorporate" type="radio" [(ngModel)]="customer.isCorporate" [value]="false">No
+    </label>
+  </div>
+  <button class="btn btn-primary">Save</button>
+</form>

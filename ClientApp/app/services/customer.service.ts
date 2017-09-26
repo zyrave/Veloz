@@ -35,7 +35,7 @@ export class CustomerService {
             .map(res => res.json());
     }
 
-    create(customer: Customer) {
+    create(customer: SaveCustomer) {
         return this.http.post(this.modUrl, customer)
             .map(res => res.json());
     }

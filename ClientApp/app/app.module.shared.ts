@@ -11,6 +11,7 @@ import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { HomeComponent } from './components/home/home.component';
 import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { CounterComponent } from './components/counter/counter.component';
+import { CustomerFormComponent } from './components/customer-form/customer-form.component';
 import { CustomerListComponent } from './components/customer-list/customer-list.component';
 import { PaginationComponent } from './components/shared/pagination.component';
 
@@ -21,6 +22,7 @@ import { PaginationComponent } from './components/shared/pagination.component';
         CounterComponent,
         FetchDataComponent,
         HomeComponent,
+        CustomerFormComponent,
         CustomerListComponent,
         PaginationComponent
     ],
@@ -32,6 +34,7 @@ import { PaginationComponent } from './components/shared/pagination.component';
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: HomeComponent },
             { path: 'customers', component: CustomerListComponent },
+            { path: 'customers/new', component: CustomerFormComponent },
             { path: '**', redirectTo: 'home' }
         ])
     ],
