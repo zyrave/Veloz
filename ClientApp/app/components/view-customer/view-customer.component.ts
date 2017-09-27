@@ -36,4 +36,13 @@ export class ViewCustomerComponent implements OnInit {
                 }
             });
     }
+
+    delete() {
+        if (confirm("Are you sure you want to delete this customer?")) {
+            this.customerService.delete(this.customer.id)
+                .subscribe(customer => {
+                    this.router.navigate(['/customers']);
+                });
+        }
+    }
 }
