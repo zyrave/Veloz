@@ -37,6 +37,7 @@ import { PaginationComponent } from './components/shared/pagination.component';
             { path: 'home', component: HomeComponent },
             { path: 'customers', component: CustomerListComponent },
             { path: 'customers/new', component: CustomerFormComponent },
+            { path: 'customers/edit/:id', component: CustomerFormComponent },
             { path: 'customers/:id', component: ViewCustomerComponent },
             { path: '**', redirectTo: 'home' }
         ])
