@@ -8,6 +8,9 @@
   <li>Email: {{ customer.email }}</li>
   <li>Social Id: {{ customer.socialdI }}</li>
   <li>Corporate: {{ customer.isCorporate ? 'Yes' : 'No' }}</li>
+  <li>Active: {{ customer.isActive ? 'Yes' : 'No' }}</li>
+  <li>Create Date: {{ customer.createDate | date: 'medium' }}</li>
+  <li>Last Update: {{ customer.lastUpdate | date: 'medium' }}</li>
 </ul>
 <br />
 <p>

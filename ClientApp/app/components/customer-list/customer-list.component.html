@@ -33,10 +33,10 @@
       <td>{{ i.phone }}</td>
       <td>{{ i.email }}</td>
       <td>{{ i.socialId }}</td>
-      <td>{{ i.isCorporate }}</td>
-      <td>{{ i.isActive }}</td>
-      <td>{{ i.createDate }}</td>
-      <td>{{ i.lastUpdate }}</td>
+      <td align="center">{{ i.isCorporate ? 'Yes' : 'No' }}</td>
+      <td align="center">{{ i.isActive ? 'Yes' : 'No' }}</td>
+      <td>{{ i.createDate | date: 'medium' }}</td>
+      <td>{{ i.lastUpdate | date: 'medium' }}</td>
       <td>
         <a class="btn btn-primary" [routerLink]="['/customers/', i.id]">View</a>
       </td>
