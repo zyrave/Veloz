@@ -1,8 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ErrorHandler } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
+import { ToastyModule } from 'ng2-toasty';
+
+import { AppErrorHandler } from './app.error-handler';
 
 import { CustomerService } from './services/customer.service';
 
@@ -32,6 +36,7 @@ import { PaginationComponent } from './components/shared/pagination.component';
         CommonModule,
         HttpModule,
         FormsModule,
+        ToastyModule.forRoot(),
         RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: HomeComponent },
@@ -44,6 +49,7 @@ import { PaginationComponent } from './components/shared/pagination.component';
     ],
     providers: [
         { provide: 'ORIGIN_URL', useValue: location.origin },
+        { provide: ErrorHandler, useClass: AppErrorHandler },
         CustomerService
     ]
 })
